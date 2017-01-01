@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		E893A4B81E19AEB80050638A /* NimbleMockSix.h in Headers */ = {isa = PBXBuildFile; fileRef = E893A4B61E19AEB80050638A /* NimbleMockSix.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E893A4BF1E19AEDE0050638A /* NimbleMockSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = E893A4BE1E19AEDE0050638A /* NimbleMockSix.swift */; };
+		E893A4C11E19AF1B0050638A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E893A4C01E19AF1B0050638A /* Nimble.framework */; };
+		E893A4D11E19B01A0050638A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E893A4CF1E19B00F0050638A /* Nimble.framework */; };
+		E893A4E11E19B0A40050638A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E893A4DF1E19B09D0050638A /* Nimble.framework */; };
+		E893A4E31E19B1A20050638A /* MockSix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E893A4E21E19B1A20050638A /* MockSix.framework */; };
+		E893A4E51E19B1B20050638A /* MockSix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E893A4E41E19B1B20050638A /* MockSix.framework */; };
+		E893A4E71E19B1C30050638A /* MockSix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E893A4E61E19B1C30050638A /* MockSix.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +22,14 @@
 		E893A4B61E19AEB80050638A /* NimbleMockSix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NimbleMockSix.h; sourceTree = "<group>"; };
 		E893A4B71E19AEB80050638A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E893A4BE1E19AEDE0050638A /* NimbleMockSix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMockSix.swift; sourceTree = "<group>"; };
+		E893A4C01E19AF1B0050638A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		E893A4C71E19AFC90050638A /* NimbleMockSix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NimbleMockSix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E893A4CF1E19B00F0050638A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		E893A4D71E19B0300050638A /* NimbleMockSix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NimbleMockSix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E893A4DF1E19B09D0050638A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
+		E893A4E21E19B1A20050638A /* MockSix.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockSix.framework; path = Carthage/Build/Mac/MockSix.framework; sourceTree = "<group>"; };
+		E893A4E41E19B1B20050638A /* MockSix.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockSix.framework; path = Carthage/Build/iOS/MockSix.framework; sourceTree = "<group>"; };
+		E893A4E61E19B1C30050638A /* MockSix.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MockSix.framework; path = Carthage/Build/tvOS/MockSix.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +37,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E893A4C11E19AF1B0050638A /* Nimble.framework in Frameworks */,
+				E893A4E31E19B1A20050638A /* MockSix.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E893A4C31E19AFC90050638A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E893A4D11E19B01A0050638A /* Nimble.framework in Frameworks */,
+				E893A4E51E19B1B20050638A /* MockSix.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E893A4D31E19B0300050638A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E893A4E11E19B0A40050638A /* Nimble.framework in Frameworks */,
+				E893A4E71E19B1C30050638A /* MockSix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +66,12 @@
 		E893A4A91E19AEB80050638A = {
 			isa = PBXGroup;
 			children = (
+				E893A4E61E19B1C30050638A /* MockSix.framework */,
+				E893A4E41E19B1B20050638A /* MockSix.framework */,
+				E893A4E21E19B1A20050638A /* MockSix.framework */,
+				E893A4C01E19AF1B0050638A /* Nimble.framework */,
+				E893A4CF1E19B00F0050638A /* Nimble.framework */,
+				E893A4DF1E19B09D0050638A /* Nimble.framework */,
 				E893A4B51E19AEB80050638A /* NimbleMockSix */,
 				E893A4B41E19AEB80050638A /* Products */,
 			);
@@ -41,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				E893A4B31E19AEB80050638A /* NimbleMockSix.framework */,
+				E893A4C71E19AFC90050638A /* NimbleMockSix.framework */,
+				E893A4D71E19B0300050638A /* NimbleMockSix.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,12 +108,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E893A4C41E19AFC90050638A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E893A4D41E19B0300050638A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E893A4B21E19AEB80050638A /* NimbleMockSix */ = {
+		E893A4B21E19AEB80050638A /* NimbleMockSix-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E893A4BB1E19AEB80050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix" */;
+			buildConfigurationList = E893A4BB1E19AEB80050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix-macOS" */;
 			buildPhases = (
 				E893A4AE1E19AEB80050638A /* Sources */,
 				E893A4AF1E19AEB80050638A /* Frameworks */,
@@ -82,9 +138,45 @@
 			);
 			dependencies = (
 			);
-			name = NimbleMockSix;
+			name = "NimbleMockSix-macOS";
 			productName = NimbleMockSix;
 			productReference = E893A4B31E19AEB80050638A /* NimbleMockSix.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E893A4C61E19AFC90050638A /* NimbleMockSix-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E893A4CC1E19AFC90050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix-iOS" */;
+			buildPhases = (
+				E893A4C21E19AFC90050638A /* Sources */,
+				E893A4C31E19AFC90050638A /* Frameworks */,
+				E893A4C41E19AFC90050638A /* Headers */,
+				E893A4C51E19AFC90050638A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NimbleMockSix-iOS";
+			productName = NimbleMockSix;
+			productReference = E893A4C71E19AFC90050638A /* NimbleMockSix.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E893A4D61E19B0300050638A /* NimbleMockSix-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E893A4DC1E19B0300050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix-tvOS" */;
+			buildPhases = (
+				E893A4D21E19B0300050638A /* Sources */,
+				E893A4D31E19B0300050638A /* Frameworks */,
+				E893A4D41E19B0300050638A /* Headers */,
+				E893A4D51E19B0300050638A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NimbleMockSix-tvOS";
+			productName = NimbleMockSix;
+			productReference = E893A4D71E19B0300050638A /* NimbleMockSix.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -97,6 +189,15 @@
 				ORGANIZATIONNAME = "Tamas Lustyik";
 				TargetAttributes = {
 					E893A4B21E19AEB80050638A = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					E893A4C61E19AFC90050638A = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					E893A4D61E19B0300050638A = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -114,13 +215,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E893A4B21E19AEB80050638A /* NimbleMockSix */,
+				E893A4B21E19AEB80050638A /* NimbleMockSix-macOS */,
+				E893A4C61E19AFC90050638A /* NimbleMockSix-iOS */,
+				E893A4D61E19B0300050638A /* NimbleMockSix-tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E893A4B11E19AEB80050638A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E893A4C51E19AFC90050638A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E893A4D51E19B0300050638A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,6 +252,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E893A4BF1E19AEDE0050638A /* NimbleMockSix.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E893A4C21E19AFC90050638A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E893A4D21E19B0300050638A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,19 +371,28 @@
 		E893A4BC1E19AEB80050638A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = NimbleMockSix/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cocoagrinder.NimbleMockSix;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NimbleMockSix;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -260,20 +400,130 @@
 		E893A4BD1E19AEB80050638A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = NimbleMockSix/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cocoagrinder.NimbleMockSix;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NimbleMockSix;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E893A4CD1E19AFC90050638A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = NimbleMockSix/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cocoagrinder.NimbleMockSix;
+				PRODUCT_NAME = NimbleMockSix;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E893A4CE1E19AFC90050638A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = NimbleMockSix/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cocoagrinder.NimbleMockSix;
+				PRODUCT_NAME = NimbleMockSix;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E893A4DD1E19B0300050638A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = NimbleMockSix/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cocoagrinder.NimbleMockSix;
+				PRODUCT_NAME = NimbleMockSix;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		E893A4DE1E19B0300050638A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = NimbleMockSix/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cocoagrinder.NimbleMockSix;
+				PRODUCT_NAME = NimbleMockSix;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -289,11 +539,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E893A4BB1E19AEB80050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix" */ = {
+		E893A4BB1E19AEB80050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E893A4BC1E19AEB80050638A /* Debug */,
 				E893A4BD1E19AEB80050638A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E893A4CC1E19AFC90050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E893A4CD1E19AFC90050638A /* Debug */,
+				E893A4CE1E19AFC90050638A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E893A4DC1E19B0300050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E893A4DD1E19B0300050638A /* Debug */,
+				E893A4DE1E19B0300050638A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
