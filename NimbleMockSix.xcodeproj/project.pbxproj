@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8055C661E19B2E3007E5EB5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		E893A4B31E19AEB80050638A /* NimbleMockSix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NimbleMockSix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E893A4B61E19AEB80050638A /* NimbleMockSix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NimbleMockSix.h; sourceTree = "<group>"; };
 		E893A4B71E19AEB80050638A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 				E893A4C01E19AF1B0050638A /* Nimble.framework */,
 				E893A4CF1E19B00F0050638A /* Nimble.framework */,
 				E893A4DF1E19B09D0050638A /* Nimble.framework */,
+				E8055C661E19B2E3007E5EB5 /* Cartfile */,
 				E893A4B51E19AEB80050638A /* NimbleMockSix */,
 				E893A4B41E19AEB80050638A /* Products */,
 			);
@@ -546,6 +548,7 @@
 				E893A4BD1E19AEB80050638A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E893A4CC1E19AFC90050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix-iOS" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +557,7 @@
 				E893A4CE1E19AFC90050638A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E893A4DC1E19B0300050638A /* Build configuration list for PBXNativeTarget "NimbleMockSix-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +566,7 @@
 				E893A4DE1E19B0300050638A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
