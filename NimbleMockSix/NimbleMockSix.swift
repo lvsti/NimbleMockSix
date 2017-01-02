@@ -6,14 +6,17 @@
 //  Copyright © 2017. Tamas Lustyik. All rights reserved.
 //
 
-import Foundation
-
 import Nimble
 import MockSix
 
 
 // MARK: - invocation matchers for Nimble:
 
+/// Constructs a matcher that tests for the invocation count of the given method
+/// of a MockSix mock object.
+/// - parameter method: The method to set the expectation for
+/// - parameter times: The number of times `method` is expected to be called
+/// - returns: A matcher that passes if `method` is called exactly `times` times, and fails otherwise.
 public func receive<T>(_ method: T.MockMethod, times: Int = 1) -> MatcherFunc<T?>
     where T : Mock, T.MockMethod.RawValue == Int {
     
@@ -31,8 +34,15 @@ public func receive<T>(_ method: T.MockMethod, times: Int = 1) -> MatcherFunc<T?
     }
 }
 
-public typealias ArgVerifier = (Any?) -> Bool
+/// Invocation argument verifier type
+public typealias ArgVerifier = (_ arg: Any?) -> Bool
 
+/// Constructs a matcher that tests for the invocation arguments of the given method
+/// of a MockSix mock object.
+/// - parameter method: The method to set the expectation for
+/// - parameter verifiers: An array of verifiers to apply to the arguments in order
+/// - returns: A matcher that passes if there is exactly 1 invocation of `method` that 
+///            satisfies all the argument verifiers, and fails otherwise
 public func receive<T>(_ method: T.MockMethod, with verifiers: [ArgVerifier]) -> MatcherFunc<T?>
     where T : Mock, T.MockMethod.RawValue == Int {
     
@@ -60,29 +70,35 @@ public func receive<T>(_ method: T.MockMethod, with verifiers: [ArgVerifier]) ->
     }
 }
 
-// MARK: - argument verifiers to use with the `receive` matcher
+// MARK: - argument verifiers to use with the `receive(_:with:)` matcher
 
-/// argument matches the given value
-public func theValue<T : Equatable>(_ val: T?) -> ArgVerifier {
+/// Constructs an argument verifier to match a given value
+/// - parameter value: The value that the argument is expected to equal to
+/// - returns: An argument verifier that passes iff the argument equals to `value`
+public func theValue<T : Equatable>(_ value: T?) -> ArgVerifier {
     return { x in
         guard let x = x else {
-            return val == nil
+            return value == nil
         }
         
-        guard let val = val else {
+        guard let value = value else {
             return false
         }
         
-        return x as! T == val
+        return x as! T == value
     }
 }
 
-/// argument matches anything (always succeeds)
+/// Constructs an argument verifier that always succeeds
+/// - returns: An argument verifier that always succeeds
 public func any() -> ArgVerifier {
     return { _ in true }
 }
 
-/// argument matches any of the values in the array
+/// Constructs an argument verifier to match any value from the given array
+/// - parameter options: The array of values that the argument is expected to take its value from
+/// - returns: An argument verifier that passes if the argument equals to any value 
+///            in `options`, and fails otherwise
 public func any<T : Equatable>(of options: [T?]) -> ArgVerifier {
     return { x in
         guard let x = x else {
@@ -93,15 +109,23 @@ public func any<T : Equatable>(of options: [T?]) -> ArgVerifier {
     }
 }
 
-/// argument makes the predicate true
-public func any<T>(passing test: @escaping (T) -> Bool) -> ArgVerifier {
+/// Constructs an argument verifier to match any value that passes the given test
+/// - parameter test: The predicate that the argument is expected to pass
+/// - parameter value: The argument's value to test
+/// - returns: An argument verifier that passes if `predicate` evaluates to true
+///            for the value of the argument, and fails otherwise
+public func any<T>(passing test: @escaping (_ value: T) -> Bool) -> ArgVerifier {
     return { x in
         test(x as! T)
     }
 }
 
-/// argument makes the predicate true
-public func any<T>(passing test: @escaping (T?) -> Bool) -> ArgVerifier {
+/// Constructs an argument verifier to match any value that passes the given test
+/// - parameter test: The predicate that the argument is expected to pass
+/// - parameter value: The argument's value to test
+/// - returns: An argument verifier that passes if `predicate` evaluates to true
+///            for the value of the argument, and fails otherwise
+public func any<T>(passing test: @escaping (_ value: T?) -> Bool) -> ArgVerifier {
     return { x in
         test(x as! T?)
     }
