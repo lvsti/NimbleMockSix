@@ -1,0 +1,12 @@
+osx_image: xcode8.2
+language: objective-c
+before_install:
+- gem install cocoapods
+- brew install carthage
+- carthage bootstrap
+script:
+- set -o pipefail
+- xcodebuild clean build test -project NimbleMockSix.xcodeproj -scheme NimbleMockSix-macOS | xcpretty
+- xcodebuild clean build test -project NimbleMockSix.xcodeproj -scheme NimbleMockSix-iOS -destination 'id=E40727B3-41FB-4D6E-B4CB-BFA87109EB12' | xcpretty
+- xcodebuild clean build test -project NimbleMockSix.xcodeproj -scheme NimbleMockSix-tvOS -destination 'id=5761D8AB-2838-4681-A528-D0949FF240C5' | xcpretty
+- pod lib lint
