@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name = 'NimbleMockSix'
-  s.version = '0.1'
+  s.version = '0.1.0'
   s.license = 'MIT'
   s.summary = 'Nimble matchers for MockSix'
   s.description = <<-DESC
 With NimbleMockSix, you can easily make expectations on method invocations on MockSix mock objects in Swift.
 DESC
   s.homepage = 'https://github.com/lvsti/NimbleMockSix'
-  s.social_media_url = 'https://twitter.com/cocoagrinder/'
+  s.social_media_url = 'https://twitter.com/cocoagrinder'
   s.authors = { 'Tamas Lustyik' => 'elveestei@gmail.com' }
   s.source = { :git => 'https://github.com/lvsti/NimbleMockSix.git', :tag => "v#{s.version}" }
 
@@ -17,8 +17,14 @@ DESC
   s.source_files = 'NimbleMockSix/*.{swift,h}'
   s.public_header_files = 'NimbleMockSix/NimbleMockSix.h'
   
-  s.dependency 'MockSix', '~> 0.1'
+  s.dependency 'MockSix', '~> 0.1.1'
   s.dependency 'Nimble', '~> 5.1.1'
   s.frameworks = 'MockSix', 'Nimble'
+  s.weak_framework = "XCTest"
+  s.pod_target_xcconfig = {
+    'ENABLE_BITCODE' => 'NO',
+    'OTHER_LDFLAGS' => '-weak-lswiftXCTest',
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks"',
+  }
 end
 
