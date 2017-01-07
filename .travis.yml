@@ -5,7 +5,7 @@ matrix:
     - os: osx
       before_install:
         - gem install cocoapods
-        - travis_wait pod repo update
+        - travis_wait pod repo update --silent
         - brew install carthage
         - carthage bootstrap
       script:
