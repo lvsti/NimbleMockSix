@@ -14,8 +14,8 @@ DESC
   s.ios.deployment_target = '8.4'
   s.osx.deployment_target = '10.10'
   s.tvos.deployment_target = '9.2'
-  s.source_files = 'NimbleMockSix/*.{swift,h}'
-  s.public_header_files = 'NimbleMockSix/NimbleMockSix.h'
+  s.source_files = 'Sources/NimbleMockSix/*.{swift,h}'
+  s.public_header_files = 'Sources/NimbleMockSix/NimbleMockSix.h'
   
   s.dependency 'MockSix', '~> 0.1.1'
   s.dependency 'Nimble', '~> 5.1.1'

@@ -1,10 +1,11 @@
 # NimbleMockSix
 
 [![](https://api.travis-ci.org/lvsti/NimbleMockSix.svg?branch=master)](https://travis-ci.org/lvsti/NimbleMockSix)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/NimbleMockSix.svg)](https://cocoapods.org/pods/NimbleMockSix)
 ![Swift 3.0.x](https://img.shields.io/badge/Swift-3.0.x-orange.svg)
-![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X%20%7C%20tvOS%20-lightgrey.svg)
+![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg)
 
 [Nimble](https://github.com/Quick/Nimble) matchers for [MockSix](https://github.com/lvsti/MockSix).
 
@@ -108,10 +109,21 @@ pod 'NimbleMockSix'
 Via Carthage: add the following lines to your Cartfile (or Cartfile.private):
 
 ```
-github "Quick/Quick"
-github "Quick/Nimble"
-github "lvsti/MockSix"
 github "lvsti/NimbleMockSix"
+github "Quick/Quick"
+```
+
+Via the Swift Package Manager: add it to the dependencies in your Package.swift:
+
+```swift
+let package = Package(
+    name: "MyAwesomeApp",
+    dependencies: [
+        .Package(url: "https://github.com/lvsti/NimbleMockSix", majorVersion: 0),
+        .Package(url: "https://github.com/Quick/Quick", majorVersion: 1),
+        // ... other dependencies ...
+    ]
+)
 ```
 
 ### License
