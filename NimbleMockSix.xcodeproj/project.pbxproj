@@ -108,6 +108,9 @@
 
 /* Begin PBXFileReference section */
 		E8055C661E19B2E3007E5EB5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		E83F22371E216233002383ED /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		E83F22381E216278002383ED /* Package.test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.test.swift; path = Support/Package.test.swift; sourceTree = "<group>"; };
+		E83F22391E216281002383ED /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E85B39F91E1D862500406A8E /* NimbleMockSixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbleMockSixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85B39FB1E1D862500406A8E /* NimbleMockSixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleMockSixTests.swift; sourceTree = "<group>"; };
 		E85B39FD1E1D862500406A8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,6 +208,7 @@
 		E83F22361E2161F9002383ED /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E83F22371E216233002383ED /* LinuxMain.swift */,
 				E85B39FA1E1D862500406A8E /* NimbleMockSixTests */,
 			);
 			path = Tests;
@@ -232,6 +236,8 @@
 				E893A4CF1E19B00F0050638A /* Nimble.framework */,
 				E893A4DF1E19B09D0050638A /* Nimble.framework */,
 				E8055C661E19B2E3007E5EB5 /* Cartfile */,
+				E83F22391E216281002383ED /* Package.swift */,
+				E83F22381E216278002383ED /* Package.test.swift */,
 				E83F22351E2161BA002383ED /* Sources */,
 				E83F22361E2161F9002383ED /* Tests */,
 				E893A4B41E19AEB80050638A /* Products */,
