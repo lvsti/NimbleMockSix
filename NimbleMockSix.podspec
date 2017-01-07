@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'NimbleMockSix'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.license = 'MIT'
   s.summary = 'Nimble matchers for MockSix'
   s.description = <<-DESC
