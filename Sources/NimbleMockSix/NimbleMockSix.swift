@@ -36,7 +36,7 @@ import MockSix
 /// - parameter method: The method to set the expectation for
 /// - parameter times: The number of times `method` is expected to be called.
 /// - returns: A matcher that passes if `method` is called exactly `times` times, and fails otherwise.
-public func receive<T>(_ method: T.MockMethod, times: UInt) -> MatcherFunc<T?>
+public func receive<T>(_ method: T.MockMethod, times: UInt) -> Predicate<T>
     where T : Mock, T.MockMethod.RawValue == Int {
     
     let message = "receive <\(method)> exactly " + (times == 1 ? "1 time" : "\(times) times")
@@ -50,7 +50,7 @@ public func receive<T>(_ method: T.MockMethod, times: UInt) -> MatcherFunc<T?>
 /// - parameter method: The method to set the expectation for
 /// - parameter times: The minimum number of times `method` is expected to be called. Defaults to 1.
 /// - returns: A matcher that passes if `method` is called at least `times` times, and fails otherwise.
-public func receive<T>(_ method: T.MockMethod, atLeastTimes times: UInt = 1) -> MatcherFunc<T?>
+public func receive<T>(_ method: T.MockMethod, atLeastTimes times: UInt = 1) -> Predicate<T>
     where T : Mock, T.MockMethod.RawValue == Int {
     
     let message = "receive <\(method)> at least " + (times == 1 ? "1 time" : "\(times) times")
@@ -63,8 +63,8 @@ public func receive<T>(_ method: T.MockMethod, atLeastTimes times: UInt = 1) -> 
 /// of a MockSix mock object.
 /// - parameter method: The method to set the expectation for
 /// - parameter times: The maximum number of times `method` is expected to be called.
-/// - returns: A matcher that passes if `method` is called at least `times` times, and fails otherwise.
-public func receive<T>(_ method: T.MockMethod, atMostTimes times: UInt) -> MatcherFunc<T?>
+/// - returns: A matcher that passes if `method` is called at most `times` times, and fails otherwise.
+public func receive<T>(_ method: T.MockMethod, atMostTimes times: UInt) -> Predicate<T>
     where T : Mock, T.MockMethod.RawValue == Int {
 
     let message = "receive <\(method)> at most " + (times == 1 ? "1 time" : "\(times) times")
@@ -84,7 +84,7 @@ public typealias ArgVerifier = (_ arg: Any?) -> Bool
 /// - parameter verifiers: An array of verifiers to apply to the arguments in order
 /// - returns: A matcher that passes if there are exactly `times` invocations of `method` for which
 ///            all the argument verifiers are satisfied; and fails otherwise
-public func receive<T>(_ method: T.MockMethod, times: UInt, with verifiers: [ArgVerifier]) -> MatcherFunc<T?>
+public func receive<T>(_ method: T.MockMethod, times: UInt, with verifiers: [ArgVerifier]) -> Predicate<T>
     where T : Mock, T.MockMethod.RawValue == Int {
         
     let message = "receive <\(method)> " + (times == 1 ? "1 time" : "\(times) times") + " with arguments"
@@ -102,7 +102,7 @@ public func receive<T>(_ method: T.MockMethod, times: UInt, with verifiers: [Arg
 /// - parameter verifiers: An array of verifiers to apply to the arguments in order
 /// - returns: A matcher that passes if there are at least `times` invocations of `method` for which
 ///            all the argument verifiers are satisfied; and fails otherwise
-public func receive<T>(_ method: T.MockMethod, atLeastTimes times: UInt = 1, with verifiers: [ArgVerifier]) -> MatcherFunc<T?>
+public func receive<T>(_ method: T.MockMethod, atLeastTimes times: UInt = 1, with verifiers: [ArgVerifier]) -> Predicate<T>
     where T : Mock, T.MockMethod.RawValue == Int {
 
     let message = "receive <\(method)> at least " + (times == 1 ? "1 time" : "\(times) times") + " with arguments"
@@ -120,7 +120,7 @@ public func receive<T>(_ method: T.MockMethod, atLeastTimes times: UInt = 1, wit
 /// - parameter verifiers: An array of verifiers to apply to the arguments in order
 /// - returns: A matcher that passes if there are at most `times` invocations of `method` for which
 ///            all the argument verifiers are satisfied; and fails otherwise
-public func receive<T>(_ method: T.MockMethod, atMostTimes times: UInt, with verifiers: [ArgVerifier]) -> MatcherFunc<T?>
+public func receive<T>(_ method: T.MockMethod, atMostTimes times: UInt, with verifiers: [ArgVerifier]) -> Predicate<T>
     where T : Mock, T.MockMethod.RawValue == Int {
         
     let message = "receive <\(method)> at least " + (times == 1 ? "1 time" : "\(times) times") + " with arguments"
@@ -202,22 +202,19 @@ typealias InvocationFilter = ([MockInvocation]) -> [MockInvocation]
 
 private func buildReceiveMatcher<T>(message: String,
                                     invocationFilter: @escaping InvocationFilter,
-                                    countCheck: @escaping (UInt) -> Bool) -> MatcherFunc<T?>
+                                    countCheck: @escaping (UInt) -> Bool) -> Predicate<T>
     where T : Mock, T.MockMethod.RawValue == Int {
-        
-    return MatcherFunc { actualExpression, failureMessage in
-        failureMessage.postfixMessage = message
-        
-        guard
-            let doublyWrappedMock = try? actualExpression.evaluate(),
-            let wrappedMock = doublyWrappedMock,
-            let mock = wrappedMock
-        else {
-            fatalError("mock is not implementing Mock")
+    
+    return Predicate.define(message) { actualExpression, msg in
+        let actualValue = try actualExpression.evaluate()
+        guard let mock = actualValue else {
+            return PredicateResult(status: .fail, message: msg.appended(message: "subject is not implementing Mock"))
         }
-        
+
         let matching = invocationFilter(mock.invocations)
-        return countCheck(UInt(matching.count))
+        let success = countCheck(UInt(matching.count))
+
+        return PredicateResult(status: PredicateStatus(bool: success), message: msg.appended(details: message))
     }
 }
 
