@@ -1,2 +1,2 @@
-github "Quick/Nimble" ~> 6.1
+github "Quick/Nimble" ~> 7.0
 github "lvsti/MockSix" ~> 0.1

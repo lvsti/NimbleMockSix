@@ -31,6 +31,6 @@ let package = Package(
     name: "NimbleMockSix",
     dependencies: [
         .Package(url: "https://github.com/lvsti/MockSix", majorVersion: 0, minor: 1),
-        .Package(url: "https://github.com/Quick/Nimble", majorVersion: 6, minor: 1)
+        .Package(url: "https://github.com/Quick/Nimble", majorVersion: 7, minor: 0)
     ]
 )
