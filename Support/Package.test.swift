@@ -38,7 +38,7 @@ let package = Package(
     targets: [
         .target(
             name: "NimbleMockSix",
-            dependencies: [],
+            dependencies: ["MockSix", "Nimble"],
             path: "Sources"
         ),
         .testTarget(
