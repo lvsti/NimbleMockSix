@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'NimbleMockSix'
-  s.version = '0.1.3'
+  s.version = '0.1.4'
   s.license = 'MIT'
   s.summary = 'Nimble matchers for MockSix'
   s.description = <<-DESC
@@ -17,7 +17,7 @@ DESC
   s.source_files = 'Sources/NimbleMockSix/*.{swift,h}'
   s.public_header_files = 'Sources/NimbleMockSix/NimbleMockSix.h'
   
-  s.dependency 'MockSix', '0.1.5'
+  s.dependency 'MockSix', '0.1.7'
   s.dependency 'Nimble', '~> 7.0'
   s.frameworks = 'MockSix', 'Nimble'
   s.weak_framework = "XCTest"
