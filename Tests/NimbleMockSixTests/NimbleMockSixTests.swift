@@ -562,20 +562,56 @@ class NimbleMockSixSpec: QuickSpec {
             }
             
             describe("any passing test") {
-                it("matches if the test passes") {
-                    // when
-                    let verifier = any { (s: String) in s.range(of: "foo") != nil }
+                context("optional argument") {
+                    it("matches if the test passes") {
+                        // when
+                        let verifier = any { (s: String?) in s?.range(of: "foo") != nil }
+                        
+                        // then
+                        expect(verifier("fast food")) == true
+                    }
                     
-                    // then
-                    expect(verifier("fast food")) == true
+                    it("doesn't match if the test fails") {
+                        // when
+                        let verifier = any { (s: String?) in s?.range(of: "foo") != nil }
+                        
+                        // then
+                        expect(verifier("hoopy frood")) == false
+                    }
+
+                    it("matches if the test passes for nil") {
+                        // when
+                        let verifier = any { (s: String?) in s?.range(of: "foo") == nil }
+                        
+                        // then
+                        expect(verifier(nil)) == true
+                    }
+
+                    it("doesn't match if the test fails for nil") {
+                        // when
+                        let verifier = any { (s: String?) in s?.range(of: "foo") != nil }
+                        
+                        // then
+                        expect(verifier(nil)) == false
+                    }
                 }
                 
-                it("doesn't match if the test fails") {
-                    // when
-                    let verifier = any { (s: String) in s.range(of: "foo") != nil }
+                context("non-optional argument") {
+                    it("matches if the test passes") {
+                        // when
+                        let verifier = any { (s: String) in s.range(of: "foo") != nil }
+                        
+                        // then
+                        expect(verifier("fast food")) == true
+                    }
                     
-                    // then
-                    expect(verifier("hoopy frood")) == false
+                    it("doesn't match if the test fails") {
+                        // when
+                        let verifier = any { (s: String) in s.range(of: "foo") != nil }
+                        
+                        // then
+                        expect(verifier("hoopy frood")) == false
+                    }
                 }
             }
         }
