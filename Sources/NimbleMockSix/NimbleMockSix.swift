@@ -162,12 +162,12 @@ public func any() -> ArgVerifier {
 public func any<T : Equatable>(of options: [T?]) -> ArgVerifier {
     return { x in
         guard let x = x else {
-            return options.index(where: { $0 == nil }) != nil
+            return options.contains(where: { $0 == nil })
         }
 
         let value = x as! T
 
-        return options.index(where: { $0 != nil && $0! == value }) != nil
+        return options.contains(where: { $0 != nil && $0! == value })
     }
 }
 
