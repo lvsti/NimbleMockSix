@@ -30,12 +30,12 @@ import PackageDescription
 
 let package = Package(
     name: "NimbleMockSix",
-    dependencies: [
-        .package(url: "https://github.com/Quick/Nimble.git", from: "7.0.3"),
-        .package(url: "https://github.com/lvsti/MockSix.git", from: "1.0.7"),
-    ],
     products: [
         .library(name: "NimbleMockSix", targets: ["NimbleMockSix"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/Quick/Nimble.git", from: "7.0.3"),
+        .package(url: "https://github.com/lvsti/MockSix.git", from: "0.1.7"),
     ],
     targets: [
         .target(
