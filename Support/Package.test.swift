@@ -1,3 +1,4 @@
+// swift-tools-version:4.0
 //
 //  Package.test.swift
 //  NimbleMockSix
@@ -30,8 +31,20 @@ import PackageDescription
 let package = Package(
     name: "NimbleMockSix",
     dependencies: [
-        .Package(url: "https://github.com/lvsti/MockSix", majorVersion: 0, minor: 1),
-        .Package(url: "https://github.com/Quick/Quick", majorVersion: 1),
-        .Package(url: "https://github.com/Quick/Nimble", majorVersion: 7, minor: 0),
-    ]
+        .package(url: "https://github.com/Quick/Quick.git", from: "1.2.0"),
+        .package(url: "https://github.com/Quick/Nimble.git", from: "7.0.3"),
+        .package(url: "https://github.com/lvsti/MockSix.git", from: "1.0.7"),
+    ],
+    targets: [
+        .target(
+            name: "NimbleMockSix",
+            dependencies: [],
+            path: "Sources"
+        ),
+        .testTarget(
+            name: "NimbleMockSixTests",
+            dependencies: ["NimbleMockSix", "Quick", "Nimble", "MockSix"]
+        )
+    ],
+    swiftLanguageVersions: [4]
 )
