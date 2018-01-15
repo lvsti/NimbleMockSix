@@ -139,7 +139,7 @@ public func receive<T>(_ method: T.MockMethod, atMostTimes times: UInt, with ver
 public func theValue<T : Equatable>(_ value: T) -> ArgVerifier {
     return { x in
         guard let x = x else { return false }
-        return x as? T == value
+        return x as! T == value
     }
 }
 
@@ -165,7 +165,7 @@ public func any<T : Equatable>(of options: [T?]) -> ArgVerifier {
             return options.index(where: { $0 == nil }) != nil
         }
 
-        guard let value = x as? T else { return false }
+        let value = x as! T
 
         return options.index(where: { $0 != nil && $0! == value }) != nil
     }
@@ -178,8 +178,8 @@ public func any<T : Equatable>(of options: [T?]) -> ArgVerifier {
 ///            for the value of the argument, and fails otherwise
 public func any<T>(passing test: @escaping (_ value: T) -> Bool) -> ArgVerifier {
     return { x in
-        guard let x = x as? T else { return false }
-        return test(x)
+        guard let x = x else { return false }
+        return test(x as! T)
     }
 }
 
@@ -190,8 +190,7 @@ public func any<T>(passing test: @escaping (_ value: T) -> Bool) -> ArgVerifier 
 ///            for the value of the argument, and fails otherwise
 public func any<T>(passing test: @escaping (_ value: T?) -> Bool) -> ArgVerifier {
     return { x in
-        guard let x = x as? T else { return false }
-        return test(x)
+        return test(x as! T?)
     }
 }
 

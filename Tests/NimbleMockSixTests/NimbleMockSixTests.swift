@@ -485,7 +485,7 @@ class NimbleMockSixSpec: QuickSpec {
                 
                 it("doesn't match any other value") {
                     // when
-                    let verifier = theValue(42)
+                    let verifier = theValue(42.0)
                     
                     // then
                     expect(verifier(3.14)) == false
