@@ -1,1 +1,1 @@
-github "Quick/Quick" "144b930b869d8e65413ecdca03f4e2fd65a7491e"
+github "Quick/Quick" ~> 2.1.0

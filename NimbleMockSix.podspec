@@ -14,11 +14,12 @@ DESC
   s.ios.deployment_target = '8.4'
   s.osx.deployment_target = '10.10'
   s.tvos.deployment_target = '9.2'
+  s.swift_version = '4.2'
   s.source_files = 'Sources/NimbleMockSix/*.{swift,h}'
   s.public_header_files = 'Sources/NimbleMockSix/NimbleMockSix.h'
   
-  s.dependency 'MockSix', '0.1.7'
-  s.dependency 'Nimble', '~> 7.0'
+  s.dependency 'MockSix', '0.2.0'
+  s.dependency 'Nimble', '~> 8.0.0'
   s.frameworks = 'MockSix', 'Nimble'
   s.weak_framework = "XCTest"
   s.pod_target_xcconfig = {
