@@ -1,4 +1,4 @@
-osx_image: xcode9
+osx_image: xcode10.1
 language: objective-c
 matrix:
   include:
@@ -11,8 +11,8 @@ matrix:
       script:
         - set -o pipefail
         - xcodebuild clean build test -project NimbleMockSix.xcodeproj -scheme NimbleMockSix-macOS | xcpretty
-        - xcodebuild clean build test -project NimbleMockSix.xcodeproj -scheme NimbleMockSix-iOS -destination 'id=85AF1F51-F2EB-4A4D-930B-0E5761511A45' | xcpretty
-        - xcodebuild clean build test -project NimbleMockSix.xcodeproj -scheme NimbleMockSix-tvOS -destination 'id=810495B9-1EB7-43BB-96AF-0A3196C7A3B7' | xcpretty
+        - xcodebuild clean build test -project NimbleMockSix.xcodeproj -scheme NimbleMockSix-iOS -destination 'id=B40F7090-26EE-4D2E-A7A2-C13E10EDA669' | xcpretty
+        - xcodebuild clean build test -project NimbleMockSix.xcodeproj -scheme NimbleMockSix-tvOS -destination 'id=9CBDF8C3-67EB-403E-8C3B-D4E31C25B708' | xcpretty
         - pod lib lint --allow-warnings
     - os: osx
       language: generic
@@ -25,7 +25,7 @@ matrix:
       sudo: required
       dist: trusty
       env:
-        - SWIFT_VERSION=4.0.2
+        - SWIFT_VERSION=4.2
       install:
         - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
       script:
